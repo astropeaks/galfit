@@ -3,19 +3,21 @@ from astropy.io import fits
 from astropy import wcs
 import matplotlib.pyplot as plt
 
-#Input Parameters: CHANGE STUFF HERE
+#Input Parameters: CHANGE STUFF HERE using info from the header. Keep NCOMBINE = 1.0
 filename = 'RGG058.fits'
 gain = 2.5
 exptime = 972.183470000001
-xmin = 140
-xmax = 440
-ymin = 101
-ymax = 401
 NCOMBINE = 1.0
 photflam = 1.5274129E-20
 newgain = 1/photflam
 f = fits.open(filename)
 w = wcs.WCS(f[1].header)
+
+#Set the dimensions you want to crop the image to.
+xmin = 140
+xmax = 440
+ymin = 101
+ymax = 401
 
 newf1 = fits.PrimaryHDU()
 newf1.header.append(('GAIN',newgain, 'commanded gain of CCD'))
