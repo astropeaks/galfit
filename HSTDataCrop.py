@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Spyder Editor
-
-This is a temporary script file.
-"""
 from astropy.io import fits
 from astropy import wcs
 import matplotlib.pyplot as plt
